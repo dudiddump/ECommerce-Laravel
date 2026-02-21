@@ -12,4 +12,9 @@ class Order extends Model
         'status',
         'total_price',
     ];
+
+    public function items()
+    {
+        return $this->hasMany(OrderItem::class);
+    }
 }

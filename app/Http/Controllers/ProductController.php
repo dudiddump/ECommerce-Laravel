@@ -31,7 +31,7 @@ class ProductController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required', 
             'price' => 'required|numeric|min:0',
-            'status' => 'in:active,inactive'
+            'status' => 'required|in:active,inactive'
         ]);
 
         if ($validator->fails()) {
@@ -43,9 +43,7 @@ class ProductController extends Controller
 
         $product = Product::create($request->all());
 
-        return response()->json([
-            'data' => $product
-        ], 201);
+        return (new ProductResource($product))->response()->setStatusCode(201);
     }
 
     // PUT /api/products/{id} (Admin Only)
@@ -71,9 +69,7 @@ class ProductController extends Controller
 
         $product->update($request->all());
 
-        return response()->json([
-            'data' => $product
-        ], 200);
+        return new ProductResource($product);
     }
 
     // DELETE /api/products/{id} (Admin Only)

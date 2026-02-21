@@ -26,19 +26,5 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('password123'),
             'role' => 'user'
         ]);
-
-        Product::create([
-            'name' => 'Gelang Manik Kawi',
-            'description' => 'Gelang manik budaya',
-            'price' => 25000,
-            'status' => 'active'
-        ]);
-
-        Product::create([
-            'name' => 'Cincin Custom',
-            'description' => 'Cincin request nama',
-            'price' => 15000,
-            'status' => 'active'
-        ]);
     }
 }

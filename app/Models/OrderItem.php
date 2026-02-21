@@ -13,4 +13,9 @@ class OrderItem extends Model
         'price',
         'subtotal'
     ];
+
+    public function order()
+    {
+        return $this->belongsTo(Order::class);
+    }
 }
