@@ -17,7 +17,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::middleware(IsAdmin::class)->group(function () {
         Route::post('/products', [ProductController::class, 'store']); 
         Route::put('/products/{id}', [ProductController::class, 'update']); 
-        Route::delete('/products/{id}', [ProductController::class, 'delete']);
+        Route::delete('/products/{id}', [ProductController::class, 'destroy']);
 
         Route::get('/orders', [OrderController::class, 'index']); 
         Route::get('/orders/{id}', [OrderController::class, 'show']); 
