@@ -73,7 +73,7 @@ class ProductController extends Controller
     }
 
     // DELETE /api/products/{id} (Admin Only)
-    public function delete($id) {
+    public function destroy($id) {
         $product = Product::find($id);
 
         if (!$product) {
