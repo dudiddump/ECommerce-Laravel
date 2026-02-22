@@ -131,4 +131,8 @@ tests/
 ## 📌 Notes
 ##### Make sure database is running before migration.
 ##### Sanctum must be properly configured before testing authenticated routes.
+<<<<<<< HEAD
 ##### Admin access is required for product management endpoints.
+=======
+##### Admin access is required for product management endpoints.
+>>>>>>> 16fa2b8dfd8637cfdb83c2fed0d16a9c6d088e79
